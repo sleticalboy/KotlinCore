@@ -1,6 +1,8 @@
 
 package com.binlee.example.kotlin
 
+import com.binlee.example.kotlin.bean.User
+
 fun main(args: Array<String>) {
     println("Hello Kotlin World!")
 
@@ -8,10 +10,9 @@ fun main(args: Array<String>) {
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
 
-    println(Model("Ben", 28))
-}
+    println(User("Ben", 28))
 
-data class Model(
-    val name: String,
-    val age: Int
-)
+    println("What's you name?")
+    val name = readlnOrNull()
+    println("Hello $name, welcome to kotlin world, there'll be much fun!")
+}
