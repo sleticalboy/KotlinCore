@@ -1,4 +1,3 @@
-
 package com.binlee.example.kotlin
 
 import com.binlee.example.kotlin.bean.User
@@ -15,4 +14,15 @@ fun main(args: Array<String>) {
     println("What's you name?")
     val name = readlnOrNull()
     println("Hello $name, welcome to kotlin world, there'll be much fun!")
+
+    log("simple log without prefix")
+    log("log with prefix", "tag")
+}
+
+// 函数默认参数
+
+fun log(msg: String?, prefix: String = "") = if (prefix == "") {
+    println(msg)
+} else {
+    println("$prefix: $msg")
 }
