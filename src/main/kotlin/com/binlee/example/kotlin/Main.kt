@@ -17,6 +17,16 @@ fun main(args: Array<String>) {
 
     log("simple log without prefix")
     log("log with prefix", "tag")
+
+
+    // 植入函数
+    infix fun Int.times(s: String) = s.repeat(this)
+    log(2 times "infix function -")
+
+
+    // 操作符函数
+    operator fun String.get(range: IntRange) = substring(range)
+    log("Hello Kotlin"[3..8])
 }
 
 // 函数默认参数
