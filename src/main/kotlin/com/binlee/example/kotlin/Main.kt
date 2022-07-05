@@ -10,6 +10,7 @@ fun main(args: Array<String>) {
     println("Program arguments: ${args.joinToString()}")
 
     println(User("Ben", 28))
+    println(User("Ben"))
 
     println("What's you name?")
     val name = readlnOrNull()
