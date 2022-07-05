@@ -29,6 +29,19 @@ fun main(args: Array<String>) {
     log("Hello Kotlin"[3..8])
 }
 
+// 可变参数：在运行时就是 Array<*>
+fun addAll(list: MutableList<String>, vararg args: String) {
+    for (arg in args) list.add(arg)
+    list.addAll(args)
+    // 可变参数展开：另一个函数的入参也是可变参数，* 可以让另一个函数知道，传递的是可变参数
+    addAllInternal(list, *args)
+}
+
+private fun addAllInternal(list: MutableList<String>, vararg args: String) {
+    list.addAll(args)
+}
+
+
 // 函数默认参数
 
 fun log(msg: String?, prefix: String = "") = if (prefix == "") {
